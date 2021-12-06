@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "670801657181",
+    "firebase_url": "https://tennisballpacking-default-rtdb.firebaseio.com",
+    "project_id": "tennisballpacking",
+    "storage_bucket": "tennisballpacking.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:670801657181:android:e8257ac71ecebedcfdbcb4",
+        "android_client_info": {
+          "package_name": "com.example.tennisballpacking"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "670801657181-7u81nq0vpu3r2fhem4acgpkn17jr6elj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.tennisballpacking",
+            "certificate_hash": "764dcef830740fb86b205d989a559d0a142dce7a"
+          }
+        },
+        {
+          "client_id": "670801657181-qjanu2aqkmq74mfc288tfveedeg3g4ha.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAf556kRWl0WWDROcQDqUPP8p5OIRTQHVc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "670801657181-qjanu2aqkmq74mfc288tfveedeg3g4ha.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
