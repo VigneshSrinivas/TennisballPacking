@@ -62,7 +62,7 @@ class _TennisBallPackingState extends State<TennisBallPacking> {
 
   initialcheck() async {
     var url =
-        "http://mvplapi.larch.in/HOme/GridFetch?SKUId=0&BoxId=0&ParentBarcode=&CreatedBy=$umid";
+        "https://13.233.23.219:85/HOme/GridFetch?SKUId=0&BoxId=0&ParentBarcode=&CreatedBy=$umid";
     var response = await http.get(Uri.parse(url));
     var data = jsonDecode(response.body);
     for (int i = 0; i < data.length; i++) {
@@ -94,7 +94,7 @@ class _TennisBallPackingState extends State<TennisBallPacking> {
     }
     print(apiskuid);
     var url1 =
-        "http://mvplapi.larch.in/HOme/FetchSKUCode?Id=$apiskuid";
+        "https://13.233.23.219:85/HOme/FetchSKUCode?Id=$apiskuid";
     var response1 = await http.get(Uri.parse(url1));
     var data1 = jsonDecode(response1.body);
     for (int i = 0; i < data1.length; i++) {
@@ -146,7 +146,7 @@ class _TennisBallPackingState extends State<TennisBallPacking> {
   }
 
   fetchSKUCode() async {
-    var url = "http://mvplapi.larch.in/HOme/FetchSKUCode?Id=0";
+    var url = "https://13.233.23.219:85/HOme/FetchSKUCode?Id=0";
     var response = await http.get(Uri.parse(url));
     var data = jsonDecode(response.body);
     setState(() {
@@ -159,7 +159,7 @@ class _TennisBallPackingState extends State<TennisBallPacking> {
     skures = _dropskucode!.substring(0, _dropskucode!.indexOf('#'));
     print(skures);
     var url =
-        "http://mvplapi.larch.in/HOme/FetchSKUCode?Id=$skures";
+        "https://13.233.23.219:85/HOme/FetchSKUCode?Id=$skures";
     var response = await http.get(Uri.parse(url));
     var data = jsonDecode(response.body);
     for (int i = 0; i < data.length; i++) {
@@ -171,7 +171,7 @@ class _TennisBallPackingState extends State<TennisBallPacking> {
 
   fetchParentBoxDD() async {
     var url =
-        "http://mvplapi.larch.in/HOme/FetchParentBox?SkuId=$skures";
+        "https://13.233.23.219:85/HOme/FetchParentBox?SkuId=$skures";
     var response = await http.get(Uri.parse(url));
     var data = jsonDecode(response.body);
     setState(() {
@@ -182,7 +182,7 @@ class _TennisBallPackingState extends State<TennisBallPacking> {
   fetchchildBox() async {
     result1 = _dropparentbox!.substring(0, _dropparentbox!.indexOf('#'));
     var url =
-        "http://mvplapi.larch.in/HOme/ChildBoxWithQty?SKUId=$skures&BoxId=$result1";
+        "https://13.233.23.219:85/HOme/ChildBoxWithQty?SKUId=$skures&BoxId=$result1";
     var response = await http.get(Uri.parse(url));
     var data = jsonDecode(response.body);
     for (int i = 0; i < data.length; i++) {
@@ -209,12 +209,12 @@ class _TennisBallPackingState extends State<TennisBallPacking> {
 
   checkparBar() async {
     var url =
-        "http://mvplapi.larch.in/Home/ParentBarcodeCheck?SKUId=$skures&BoxId=$result1&ParentBarcode=${parbarcode.text}";
+        "https://13.233.23.219:85/Home/ParentBarcodeCheck?SKUId=$skures&BoxId=$result1&ParentBarcode=${parbarcode.text}";
     var response = await http.get(Uri.parse(url));
     var data = jsonDecode(response.body);
     for (int i = 0; i < data.length; i++) {
       if (data[i]['Success'] == '') {
-        var url1 = "http://mvplapi.larch.in/Home/GridFetch?SKUId=$skures&BoxId=$result1&ParentBarcode=${parbarcode.text}&CreatedBy=$umid";
+        var url1 = "https://13.233.23.219:85/Home/GridFetch?SKUId=$skures&BoxId=$result1&ParentBarcode=${parbarcode.text}&CreatedBy=$umid";
         var response1 = await http.get(Uri.parse(url1));
         var data1 = jsonDecode(response1.body);
         for(int i=0;i<data1.length;i++){
@@ -258,7 +258,7 @@ class _TennisBallPackingState extends State<TennisBallPacking> {
 
   checkchildBar() async {
     var url =
-        "http://mvplapi.larch.in/Home/ChildBarcodeCheck?SKUId=$skures&BoxId=$result1&ChildBarcode=${childbarcode.text}";
+        "https://13.233.23.219:85/Home/ChildBarcodeCheck?SKUId=$skures&BoxId=$result1&ChildBarcode=${childbarcode.text}";
     var response = await http.get(Uri.parse(url));
     var data = jsonDecode(response.body);
     for (int i = 0; i < data.length; i++) {
@@ -284,7 +284,7 @@ class _TennisBallPackingState extends State<TennisBallPacking> {
             });
       } else {
         var url1 =
-            "http://mvplapi.larch.in/Home/InsertData?SKUId=$skures&BoxId=$result1&ParentBarcode=${parbarcode.text}&ChildBarcode=${childbarcode.text}&CreatedBy=$umid";
+            "https://13.233.23.219:85/Home/InsertData?SKUId=$skures&BoxId=$result1&ParentBarcode=${parbarcode.text}&ChildBarcode=${childbarcode.text}&CreatedBy=$umid";
         var response1 = await http.get(Uri.parse(url1));
         var data1 = jsonDecode(response1.body);
         for (int i = 0; i < data1.length; i++) {
@@ -311,7 +311,7 @@ class _TennisBallPackingState extends State<TennisBallPacking> {
                 });
           } else {
             var url2 =
-                "http://mvplapi.larch.in/Home/GridFetch?SKUId=0&BoxId=0&ParentBarcode=&CreatedBy=$umid";
+                "https://13.233.23.219:85/Home/GridFetch?SKUId=0&BoxId=0&ParentBarcode=&CreatedBy=$umid";
             var response2 = await http.get(Uri.parse(url2));
             var data2 = jsonDecode(response2.body);
             for (int i = 0; i < data2.length; i++) {
@@ -345,7 +345,7 @@ class _TennisBallPackingState extends State<TennisBallPacking> {
 
   inicheckchildbarcode() async {
     var url =
-        "http://mvplapi.larch.in/Home/ChildBarcodeCheck?SKUId=$apiskuid&BoxId=$apiboxid&ChildBarcode=${childbarcode.text}";
+        "https://13.233.23.219:85/Home/ChildBarcodeCheck?SKUId=$apiskuid&BoxId=$apiboxid&ChildBarcode=${childbarcode.text}";
     var response = await http.get(Uri.parse(url));
     var data = jsonDecode(response.body);
     for (int i = 0; i < data.length; i++) {
@@ -372,7 +372,7 @@ class _TennisBallPackingState extends State<TennisBallPacking> {
             });
       } else {
         var url1 =
-            "http://mvplapi.larch.in/Home/InsertData?SKUId=$apiskuid&BoxId=$apiboxid&ParentBarcode=${parbarcode.text}&ChildBarcode=${childbarcode.text}&CreatedBy=$umid";
+            "https://13.233.23.219:85/Home/InsertData?SKUId=$apiskuid&BoxId=$apiboxid&ParentBarcode=${parbarcode.text}&ChildBarcode=${childbarcode.text}&CreatedBy=$umid";
         var response1 = await http.get(Uri.parse(url1));
         var data1 = jsonDecode(response1.body);
         for (int i = 0; i < data1.length; i++) {
@@ -399,7 +399,7 @@ class _TennisBallPackingState extends State<TennisBallPacking> {
                 });
           } else {
             var url2 =
-                "http://mvplapi.larch.in/Home/GridFetch?SKUId=0&BoxId=0&ParentBarcode=&CreatedBy=$umid";
+                "https://13.233.23.219:85/Home/GridFetch?SKUId=0&BoxId=0&ParentBarcode=&CreatedBy=$umid";
             var response2 = await http.get(Uri.parse(url2));
             var data2 = jsonDecode(response2.body);
             for (int i = 0; i < data2.length; i++) {
